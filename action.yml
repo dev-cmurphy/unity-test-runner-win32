@@ -1,4 +1,4 @@
-name: 'Unity - Test runner (with win32)'
+name: 'Unity - Test runner (fork with win32)'
 author: Webber Takken <webber@takken.io>
 description: 'Run tests for any Unity project.'
 inputs:
