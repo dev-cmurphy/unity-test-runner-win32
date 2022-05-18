@@ -14,7 +14,7 @@ const Action = {
   },
 
   get canonicalName() {
-    return 'unity-test-runner';
+    return 'unity-test-runner-win32';
   },
 
   get rootFolder() {
