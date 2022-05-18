@@ -36,7 +36,7 @@ const Action = {
   checkCompatibility() {
     const currentPlatform = process.platform;
     if (!Action.supportedPlatforms.includes(currentPlatform)) {
-      throw new Error(`Currently ${currentPlatform}-platform is not supported`);
+      throw new Error(`Currently ${currentPlatform}-platform is not supported on this fork`);
     }
   },
 };
