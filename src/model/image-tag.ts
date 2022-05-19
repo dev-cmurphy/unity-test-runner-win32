@@ -43,7 +43,7 @@ class ImageTag {
       generic: '',
       webgl: 'webgl',
       mac: 'mac-mono',
-      windows: 'windows-mono',
+      windows: 'windows-il2cpp',
       linux: 'base',
       linuxIl2cpp: 'linux-il2cpp',
       android: 'android',
