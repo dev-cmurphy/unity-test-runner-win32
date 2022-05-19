@@ -95,7 +95,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const path_1 = __importDefault(__nccwpck_require__(1017));
 const Action = {
     get supportedPlatforms() {
-        return ['linux'];
+        return ['linux', 'win32'];
     },
     get isRunningLocally() {
         return process.env.RUNNER_WORKSPACE === undefined;
@@ -104,7 +104,7 @@ const Action = {
         return path_1.default.basename(__dirname) === 'model';
     },
     get canonicalName() {
-        return 'unity-test-runner';
+        return 'unity-test-runner-win32';
     },
     get rootFolder() {
         if (Action.isRunningFromSource) {
@@ -121,7 +121,7 @@ const Action = {
     checkCompatibility() {
         const currentPlatform = process.platform;
         if (!Action.supportedPlatforms.includes(currentPlatform)) {
-            throw new Error(`Currently ${currentPlatform}-platform is not supported`);
+            throw new Error(`Currently ${currentPlatform}-platform is not supported on this fork`);
         }
     },
 };
