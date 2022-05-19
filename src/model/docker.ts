@@ -51,7 +51,7 @@ const Docker = {
         --env GITHUB_HEAD_REF \
         --env GITHUB_BASE_REF \
         --env GITHUB_EVENT_NAME \
-        --env GITHUB_WORKSPACE=/github/workspace \
+        --env GITHUB_WORKSPACE=c:/github/workspace \
         --env GITHUB_ACTION \
         --env GITHUB_EVENT_PATH \
         --env RUNNER_OS \
@@ -60,17 +60,16 @@ const Docker = {
         --env RUNNER_WORKSPACE \
         --env GIT_PRIVATE_TOKEN="${gitPrivateToken}" \
         ${sshAgent ? '--env SSH_AUTH_SOCK=/ssh-agent' : ''} \
-        --volume "${githubHome}":"/root:z" \
-        --volume "${githubWorkflow}":"/github/workflow:z" \
-        --volume "${workspace}":"/github/workspace:z" \
-        --volume "${actionFolder}/steps":"/steps:z" \
-        --volume "${actionFolder}/entrypoint.sh":"/entrypoint.sh:z" \
-        ${sshAgent ? `--volume ${sshAgent}:/ssh-agent` : ''} \
-        ${sshAgent ? '--volume /home/runner/.ssh/known_hosts:/root/.ssh/known_hosts:ro' : ''} \
+        --volume "${workspace}":"c:/github/workspace" \
+        --volume "c:/regkeys":"c:/regkeys" \
+        --volume "${workspace}":"c:/github/workspace" \
+        --volume "${actionFolder}/steps":"c:/steps" \
+        --volume "${actionFolder}/entrypoint.sh":"c:/entrypoint.sh" \
+        ${sshAgent ? `--volume ${sshAgent}:c/ssh-agent` : ''} \
         ${useHostNetwork ? '--net=host' : ''} \
         ${githubToken ? '--env USE_EXIT_CODE=false' : '--env USE_EXIT_CODE=true'} \
         ${image} \
-        /bin/bash /entrypoint.sh`;
+        powershell c:/steps/entrypoint.ps1`;
 
     await exec(command, undefined, { silent });
   },
