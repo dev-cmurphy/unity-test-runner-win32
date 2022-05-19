@@ -13,7 +13,7 @@ class ImageTag {
   constructor(imageProperties) {
     const {
       editorVersion = '2019.2.11f1',
-      targetPlatform = Platform.types.StandaloneLinux64,
+      targetPlatform = Platform.types.StandaloneWindows,
       customImage,
     } = imageProperties;
 
