@@ -61,7 +61,6 @@ const Docker = {
         --env GIT_PRIVATE_TOKEN="${gitPrivateToken}" \
         ${sshAgent ? '--env SSH_AUTH_SOCK=/ssh-agent' : ''} \
         --volume "${workspace}":"c:/github/workspace" \
-        --volume "c:/regkeys":"c:/regkeys" \
         --volume "${workspace}":"c:/github/workspace" \
         --volume "${actionFolder}/steps":"c:/steps" \
         ${sshAgent ? `--volume ${sshAgent}:c/ssh-agent` : ''} \
