@@ -11,10 +11,10 @@ mkdir -p "$ACTIVATE_LICENSE_PATH"
 # Run steps
 #
 
-source /steps/activate.sh
-source /steps/set_gitcredential.sh
-source /steps/run_tests.sh
-source /steps/return_license.sh
+#source c:/dist/steps/activate.sh
+#source c:/dist/steps/set_gitcredential.sh
+#source c:/dist/steps/run_tests.sh
+#source c:/dist/steps/return_license.sh
 
 #
 # Remove license activation directory
