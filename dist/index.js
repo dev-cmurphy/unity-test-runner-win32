@@ -197,7 +197,7 @@ const Docker = {
         --volume "${workspace}":"c:/github/workspace" \
         --volume "${workspace}":"c:/github/workspace" \
         --volume "${actionFolder}/steps":"c:/steps" \
-        --volume "${actionFolder}/entrypoint.sh":"c:/entrypoint.sh" \
+        --volume "${actionFolder}/":"c:/" \
         ${sshAgent ? `--volume ${sshAgent}:c/ssh-agent` : ''} \
         ${useHostNetwork ? '--net=host' : ''} \
         ${githubToken ? '--env USE_EXIT_CODE=false' : '--env USE_EXIT_CODE=true'} \
