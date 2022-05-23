@@ -68,7 +68,7 @@ const Docker = {
         ${useHostNetwork ? '--net=host' : ''} \
         ${githubToken ? '--env USE_EXIT_CODE=false' : '--env USE_EXIT_CODE=true'} \
         ${image} \
-        bash c:/entrypoint.sh`;
+        bash c:/dist/entrypoint.sh`;
 
     await exec(command, undefined, { silent });
   },

@@ -202,7 +202,7 @@ const Docker = {
         ${useHostNetwork ? '--net=host' : ''} \
         ${githubToken ? '--env USE_EXIT_CODE=false' : '--env USE_EXIT_CODE=true'} \
         ${image} \
-        bash c:/entrypoint.sh`;
+        bash c:/dist/entrypoint.sh`;
             yield (0, exec_1.exec)(command, undefined, { silent });
         });
     },
